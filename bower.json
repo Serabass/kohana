@@ -1,0 +1,19 @@
+{
+  "name": "throughthelife",
+  "description": "-",
+  "main": "index.js",
+  "authors": [
+    "Serabass"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Serabass/throughthelife",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
