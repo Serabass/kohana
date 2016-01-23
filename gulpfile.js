@@ -3,6 +3,8 @@ var gulp = require('gulp'),
     jade = require('jade'),
     gulpJade = require('gulp-jade'),
     log = require('gulp-log'),
+    tsc = require('gulp-tsc'),
+    rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer')
 ;
 
@@ -12,6 +14,14 @@ gulp.task('styles', function () {
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8"))
         .pipe(gulp.dest('.'))
     ;
+});
+
+gulp.task('jade-html', function () {
+    gulp.src("application/views/**/*.html")
+        .pipe(rename(function (path) {
+            path.extname = ".php"
+        }))
+        .pipe(gulp.dest("application/views/"));
 });
 
 gulp.task('jade', function () {
@@ -26,7 +36,7 @@ gulp.task('jade', function () {
     ;
 });
 
-gulp.task("ts:app", function () {
+gulp.task("ts", function () {
     var appConfig = {
         "module": "umd",
         target: "es5",
@@ -36,7 +46,8 @@ gulp.task("ts:app", function () {
         out: "app.compiled.js"
     };
 
-    return gulp.src(['/static/js/**/*.ts', 'typings/tsd.d.ts'])
-        .pipe(plugins.tsc(appConfig))
-        .pipe(gulp.dest("public/app/"));
+    return gulp.src(['static/js/**/*.ts', 'typings/tsd.d.ts'])
+        .pipe(log())
+        .pipe(tsc(appConfig))
+        .pipe(gulp.dest("static/js/"));
 });
