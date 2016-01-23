@@ -2,7 +2,12 @@ doctype html
 html(ng-app="tl")
     head
         script(src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript")
+        link(rel="stylesheet" href="/static/css/styles.compiled.css")
     body
+
+        div(ng-controller="VKLoginController")#login_button(onclick="VK.Auth.login(authInfo);")
+            = "Login"
+
         div(ng-view)
 
         script(src="/bower_components/angular/angular.min.js" type="text/javascript")
