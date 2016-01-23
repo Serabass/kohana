@@ -8,6 +8,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer')
 ;
 
+gulp.task('default', ['jade', 'jade-html', 'ts', 'styles']);
+
 gulp.task('styles', function () {
     gulp.src('/static/css')
         .pipe(sass({ onError: function (e) { console.log(e); } }))
@@ -38,7 +40,7 @@ gulp.task('jade', function () {
 
 gulp.task("ts", function () {
     var appConfig = {
-        "module": "umd",
+        "module": "amd",
         target: "es5",
         noImplicitAny: true,
         experimentalDecorators: true,
