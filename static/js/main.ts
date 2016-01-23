@@ -1,3 +1,26 @@
-var msg:string = 'Hello!';
+/// <reference path="../../typings/tsd.d.ts" />
 
-console.log(msg);
+module TL {
+    angular.module('tl', [
+        'ngCookies',
+        'ngRoute',
+    ]);
+
+    function getModule():ng.IModule {
+        return angular.module('tl');
+    }
+
+    getModule()
+        .config([
+        '$routeProvider',
+        '$locationProvider',
+        function ($routeProvider:ng.IRootScopeService, $locationProvider:ng.ILocationProvider) {
+
+        }])
+
+        .run(['$rootScope', function ($rootScope:ng.IRootScopeService) {
+            console.log('runned!');
+        }])
+}
+
+console.log(123);
