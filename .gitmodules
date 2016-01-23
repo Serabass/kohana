@@ -28,3 +28,6 @@
 [submodule "modules/minion"]
 	path = modules/minion
 	url = https://github.com/kohana/minion.git
+[submodule "modules/vk"]
+	path = modules/vk
+	url = git://github.com/Slaver/kohana-vk.git
