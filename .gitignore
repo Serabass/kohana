@@ -14,3 +14,8 @@ vendor/*
 
 bower_components
 node_modules
+
+*.js
+*.html
+*.css
+!gulpfile.js
