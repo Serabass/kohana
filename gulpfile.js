@@ -5,16 +5,18 @@ var gulp = require('gulp'),
     log = require('gulp-log'),
     tsc = require('gulp-tsc'),
     rename = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer')
+    autoprefixer = require('gulp-autoprefixer'),
+    concat = require('gulp-concat')
 ;
 
 gulp.task('default', ['jade', 'jade-html', 'ts', 'styles']);
 
 gulp.task('styles', function () {
-    gulp.src('/static/css')
+    gulp.src('./static/css/**/*.scss')
         .pipe(sass({ onError: function (e) { console.log(e); } }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8"))
-        .pipe(gulp.dest('.'))
+        .pipe(concat('styles.compiled.css'))
+        .pipe(gulp.dest('static/css/'))
     ;
 });
 
