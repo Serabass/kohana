@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Model_User extends ORM {
+class Model_Wish extends ORM {
     public $id;
-    public $firstName;
-    public $lastName;
+    public $text;
+    public $userId;
 }
