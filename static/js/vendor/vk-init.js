@@ -4,7 +4,10 @@ VK.init({
 
 function authInfo(response) {
     if (response.session) {
-        alert('user: '+response.session.mid);
+        VK.Api.call('users.get', {
+            user_ids: response.session.mid,
+            fields: 'photo_50,city,verified'
+        }, function (res) { window.user = res.response[0] });
     } else {
         alert('not auth');
     }

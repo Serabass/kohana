@@ -19,7 +19,7 @@ module TL.Main {
 
             $routeProvider.when('/', {
                 controller: 'MainController',
-                template: '{{ 1 + 1 }}'
+                templateUrl: '/static/html/list.html'
             })
 
             .otherwise({

@@ -4,4 +4,9 @@ module TL {
         'tl.main'
     ]);
 
+    angular.module('tl')
+    .controller('VKLoginController', ['$scope', function ($scope:any) {
+
+        }]);
+
 }
