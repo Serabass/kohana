@@ -15,5 +15,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-cookies": "~1.4.9",
+    "angular-route": "~1.4.9"
+  }
 }
