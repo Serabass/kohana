@@ -16,6 +16,10 @@ bower_components
 node_modules
 
 *.js
+*.js.map
 *.html
 *.css
 !gulpfile.js
+
+/modules
+/system
